@@ -1,0 +1,13 @@
+local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/tbao143/Library-ui/refs/heads/main/Redzhubui"))()
+local Window = redzlib:MakeWindow({
+  Title = "FizHubzz: Ps",
+  SubTitle = "Script Ape Ni woi",
+  SaveFolder = "testando | redz lib v5.lua"
+})
+
+local Tab1 = Window:MakeTab({"My First Bludger🤫", "cherry"})
+local Section = Tab1:AddSection({"Script Ku"})
+
+Tab1:AddButton({"Give Me Muani🙏🗿", function(Value)
+print("Hello World!")
+end})
