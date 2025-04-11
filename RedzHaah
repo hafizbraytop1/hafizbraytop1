@@ -14,7 +14,32 @@ local Tab1 = Window:MakeTab({"My First Bludger🤫", "cherry"})
 local Section = Tab1:AddSection({"Script Ku"})
 
 Tab1:AddButton({"Give Me Muani🙏🗿", function(Value)
-print("Hello World!")
+local ToolName = "Advanced Teleport Tool"
+
+local function createTool()
+    -- Create the tool
+    local tool = Instance.new("Tool")
+    tool.Name = ToolName
+    tool.RequiresHandle = false
+    tool.CanBeDropped = false
+
+    tool.Parent = game.Players.LocalPlayer.Backpack
+
+    tool.Activated:Connect(function()
+        local player = game.Players.LocalPlayer
+        local mouse = player:GetMouse()
+        local targetPos = mouse.Hit.p
+
+        player.Character:MoveTo(targetPos)
+    end)
+end
+
+local function onCharacterAdded(character)
+    createTool()
+end
+
+game.Players.LocalPlayer.CharacterAdded:Connect(onCharacterAdded)
+createTool()
 end})
 
 local Dropdown = Tab1:AddDropdown({
